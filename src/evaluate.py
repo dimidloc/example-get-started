@@ -40,7 +40,7 @@ with open(scores_file, "w") as fd:
 
 # ROC has a drop_intermediate arg that reduces the number of points.
 # https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_curve.html#sklearn.metrics.roc_curve.
-# PRC lacks this arg, so we manually reduce to 1000 points as a rough estimate.
+# PRC lacks this arg, so we manually reduce to 1000  points as a rough estimate.
 nth_point = math.ceil(len(prc_thresholds) / 1000)
 prc_points = list(zip(precision, recall, prc_thresholds))[::nth_point]
 with open(prc_file, "w") as fd:
